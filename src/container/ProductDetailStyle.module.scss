@@ -1,0 +1,34 @@
+.product{
+    margin: 25px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.productImg{
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid #dadada;
+    img{
+        max-width: 500px;
+        max-height: 500px;
+        object-fit: contain;
+    }
+}
+
+.productDetail{
+    text-align: left;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    .productCategory{
+        text-transform: uppercase;
+        font-weight: 400;
+        background-color: #dadada;
+        padding: 2px 0;
+    }
+}

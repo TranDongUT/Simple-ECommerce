@@ -1,0 +1,27 @@
+.productCol{
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    .productItem{
+        &:hover{
+            cursor: pointer;
+            transform: scale(1.05);
+            transition: 0.3s linear;
+          }
+    }
+      
+    .productImg{
+        height: 150px;
+        margin: 10px auto;
+        img{
+            width: 90%;
+            height: 90%;
+          }
+      }
+    
+    .productTitle{
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+  }
