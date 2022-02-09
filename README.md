@@ -1,10 +1,16 @@
 #Link demo
 https://trandongut.github.io/Simple-ECommerce/
+##Luyện tập:
+###Hooks, Router, tổ chức lại file/folder;
+##Mới: 
+###dùng axios call Api;
+###giao diện bootstrap-react;
+
 
 #Desktop
 ![desktop-homepage](https://user-images.githubusercontent.com/84276205/153145371-9e52cb9b-40db-4d48-8bc2-fb02bf0597cb.jpg)
 ![desktop-detail](https://user-images.githubusercontent.com/84276205/153145376-7946ea93-8588-4fc0-a5da-adbdf44e7c5b.jpg)
-
+-------------------------------------
 #Mobile
 ![mobile-homepage](https://user-images.githubusercontent.com/84276205/153145412-a184cfbe-c90c-43ac-b19e-8f145e5d6972.jpg)
 ![mobile-detail](https://user-images.githubusercontent.com/84276205/153145414-97d59dc3-ca26-4bec-be26-3855842ca8e5.jpg)
