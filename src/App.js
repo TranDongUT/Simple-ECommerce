@@ -8,8 +8,9 @@ function App() {
   return (
     <div className="App">
         <Header/>
+        <ProductList/>
         <Routes>
-            <Route path='/' element={<ProductList/>}/>
+            <Route path='https://trandongut.github.io/Simple-ECommerce/' element={<ProductList/>}/>
             <Route path="/product/:productId" element={<ProductDetail/>} />
         </Routes>
     </div>
