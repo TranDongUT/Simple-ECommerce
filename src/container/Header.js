@@ -9,9 +9,9 @@ function Header(){
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-            {/* <Link to={'/product'} style={{ color: 'inherit', textDecoration: 'inherit'}}>
-            </Link> */}
+            <Link to={'/product'} style={{ color: 'inherit', textDecoration: 'inherit'}}>
                 <Nav.Link href='/product'>Products</Nav.Link>
+            </Link>
                 <Nav.Link href="https://www.facebook.com/profile.php?id=100004428967428">Link</Nav.Link>
                 <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
