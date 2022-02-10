@@ -5,15 +5,13 @@ function Header(){
     return(
         <Navbar bg="light" expand="lg">
         <Container>
-            <Link to={'https://trandongut.github.io/Simple-ECommerce/'} style={{ color: 'inherit', textDecoration: 'inherit'}}>
-                <Navbar.Brand >E-Commerce TranDongUT</Navbar.Brand>
-            </Link>
+            <Navbar.Brand href='https://trandongut.github.io/Simple-ECommerce/' >E-Commerce TranDongUT</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-            <Link to={'https://trandongut.github.io/Simple-ECommerce/'} style={{ color: 'inherit', textDecoration: 'inherit'}}>
-                <Nav.Link href='#products'>Products</Nav.Link>
-            </Link>
+            {/* <Link to={'/product'} style={{ color: 'inherit', textDecoration: 'inherit'}}>
+            </Link> */}
+                <Nav.Link href='/product'>Products</Nav.Link>
                 <Nav.Link href="https://www.facebook.com/profile.php?id=100004428967428">Link</Nav.Link>
                 <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

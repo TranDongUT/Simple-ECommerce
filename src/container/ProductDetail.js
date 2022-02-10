@@ -26,44 +26,65 @@ function ProductDetail() {
     }
     return () => {
       //clean up function
-      dispatch(selectedProduct(''));
+      dispatch(selectedProduct(""));
     };
   }, [productId]);
 
   return (
     <>
-        <h2 style={{marginTop: '20px'}}>Product Detail</h2>
-        {Object.keys(state.selectedProduct).length === 0 ? (
-            <Button variant="primary" disabled>
-            <Spinner
-              as="span"
-              animation="grow"
-              size="sm"
-              role="status"
-              aria-hidden="true"
-            />
-            Loading...
-          </Button>
-        ) : (
-            <div className={style.product}>
-            <Row>
-            <Col sm={6}>
-                <div className={style.productImg}>
+      <h2 style={{ marginTop: "20px" }}>Product Detail</h2>
+      {Object.keys(state.selectedProduct).length === 0 ? (
+        <Button
+          style={{
+            position: "fixed",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%,-50%)",
+          }}
+          variant="primary"
+          disabled
+        >
+          <Spinner
+            as="span"
+            animation="grow"
+            size="sm"
+            role="status"
+            aria-hidden="true"
+          />
+          Loading...
+        </Button>
+      ) : (
+        <Row>
+          <div className={style.product}>
+            <Col sm={5}>
+              <div className={style.productImg}>
                 <img src={image} />
-                </div>
+              </div>
             </Col>
-            <Col sm={6}>
-                <div className={style.productDetail}>
-                <h4 className={style.productDetail, style.productCategory}>{category}</h4>
-                <h2 className={style.productDetail, style.productTitle}>{title}</h2>
-                <p className={style.productDetail, style.productDes}>{description}</p>
+            <Col sm={5}>
+              <div className={style.productDetail}>
+                <h4 className={(style.productDetail, style.productCategory)}>
+                  {category}
+                </h4>
+                <h2 className={(style.productDetail, style.productTitle)}>
+                  {title}
+                </h2>
+                <p className={(style.productDetail, style.productDes)}>
+                  {description}
+                </p>
                 <h1>${price}</h1>
-                <Button onClick={e => e.preventDefault()} variant="primary">Add To Cart</Button>
-                </div>
+                <Button
+                  style={{ width: "100%" }}
+                  onClick={(e) => e.preventDefault()}
+                  variant="primary"
+                >
+                  Add To Cart
+                </Button>
+              </div>
             </Col>
-            </Row>
-        </div>
-        )}
+          </div>
+        </Row>
+      )}
     </>
   );
 }
