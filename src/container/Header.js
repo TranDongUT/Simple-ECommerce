@@ -9,32 +9,18 @@ import {
   Button,
 } from "react-bootstrap";
 
-import style from './HeaderStyle.module.scss';
+import style from "./HeaderStyle.module.scss";
 import ProductFilter from "./ProductFilter";
-import { useContext, useState } from "react";
-import {filterProducts, clearFilter} from '../store/actions';
+import { useContext } from "react";
+import { filterProducts } from "../store/actions";
 import { StoreContext } from "../store";
-import { logDOM } from "@testing-library/react";
 
 function Header() {
+  const [, dispatch] = useContext(StoreContext);
 
-  const [state, dispatch] = useContext(StoreContext);
-  const [showFilter, setShowFilter] = useState(false);
-
-  const handleFilter = (e)=>{
-      if(e.target.value.trim() !== ''){
-        dispatch(filterProducts(e.target.value))
-      }
-      else{
-        dispatch(clearFilter());
-      }
-  }
-
-  const handleShowFilter = (e)=>{
-    if(e.target.value.trim() == ''){
-        setShowFilter(false)
-    }
-  }
+  const handleFilter = (e) => {
+    dispatch(filterProducts(e.target.value.trim()));
+  };
 
   return (
     <Navbar bg="light" expand="lg">
@@ -73,17 +59,11 @@ function Header() {
                 placeholder="Search"
                 className="me-2"
                 aria-label="Search"
-                onChange={e => handleFilter(e)}
-                onFocus={e => setShowFilter(true)}
-                onBlur={e => handleShowFilter(e)}
+                onChange={(e) => handleFilter(e)}
               />
               <Button variant="outline-success">Search</Button>
             </Form>
-            {/* component products filter */}
-            {
-              showFilter ? <ProductFilter/> : ''
-            }
-            {/*  */}
+            <ProductFilter />
           </div>
         </Navbar.Collapse>
       </Container>

@@ -5,15 +5,13 @@ import axios from "axios";
 import productAPI from "../API";
 import { Col, Row, Button, Spinner } from "react-bootstrap";
 import style from "./ProductDetailStyle.module.scss";
-import { selectedProduct } from "../store/actions";
+import { selectedProduct, clearFilter } from "../store/actions";
 
 function ProductDetail() {
   const { productId } = useParams();
-  //console.log(productId);
 
   const [state, dispatch] = useContext(StoreContext);
-  const { category, description, id, image, price, rating, title } =
-    state.selectedProduct;
+  const { category, description, image, price, title } = state.selectedProduct;
 
   const fetchProductDetail = async () => {
     const respone = await axios.get(`${productAPI}/${productId}`);
@@ -21,11 +19,11 @@ function ProductDetail() {
   };
 
   useEffect(() => {
-    if (productId && productId != "") {
+    dispatch(clearFilter());
+    if (productId) {
       fetchProductDetail();
     }
     return () => {
-      //clean up function
       dispatch(selectedProduct(""));
     };
   }, [productId]);
@@ -58,7 +56,7 @@ function ProductDetail() {
           <div className={style.product}>
             <Col sm={5}>
               <div className={style.productImg}>
-                <img src={image} />
+                <img src={image} alt="" />
               </div>
             </Col>
             <Col sm={5}>
