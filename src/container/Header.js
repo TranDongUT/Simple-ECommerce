@@ -22,6 +22,19 @@ function Header() {
     dispatch(filterProducts(e.target.value.trim()));
   };
 
+  function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  async function delayNavigating() {
+    await sleep(1);
+    dispatch(clearFilter());
+  }
+
+  const hideFilter = () => {
+    delayNavigating();
+  };
+
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -60,7 +73,7 @@ function Header() {
                 className="me-2"
                 aria-label="Search"
                 onChange={(e) => handleFilter(e)}
-                onBlur={() => dispatch(clearFilter())}
+                onBlur={() => hideFilter()}
               />
               <Button variant="outline-success">Search</Button>
             </Form>
