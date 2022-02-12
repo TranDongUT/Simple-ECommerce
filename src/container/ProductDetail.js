@@ -19,7 +19,6 @@ function ProductDetail() {
   };
 
   useEffect(() => {
-    dispatch(clearFilter());
     if (productId) {
       fetchProductDetail();
     }

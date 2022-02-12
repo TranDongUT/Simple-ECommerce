@@ -34,11 +34,6 @@ export function reducer(state, action) {
         ...state,
         productFilter: [...fill],
       };
-    case CLEAR_FILTER:
-      return {
-        ...state,
-        productFilter: [],
-      };
     default:
       throw new Error("invalid action");
   }

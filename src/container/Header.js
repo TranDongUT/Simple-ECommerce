@@ -11,28 +11,16 @@ import {
 
 import style from "./HeaderStyle.module.scss";
 import ProductFilter from "./ProductFilter";
-import { useContext } from "react";
-import { filterProducts, clearFilter } from "../store/actions";
+import { useContext, useState } from "react";
+import { filterProducts } from "../store/actions";
 import { StoreContext } from "../store";
 
 function Header() {
   const [, dispatch] = useContext(StoreContext);
+  const [showFilter, setShowFilter] = useState(false);
 
   const handleFilter = (e) => {
     dispatch(filterProducts(e.target.value.trim()));
-  };
-
-  function sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  }
-
-  async function delayNavigating() {
-    await sleep(1);
-    dispatch(clearFilter());
-  }
-
-  const hideFilter = () => {
-    delayNavigating();
   };
 
   return (
@@ -72,12 +60,13 @@ function Header() {
                 placeholder="Search"
                 className="me-2"
                 aria-label="Search"
+                onFocus={() => setShowFilter(true)}
                 onChange={(e) => handleFilter(e)}
-                onBlur={() => hideFilter()}
+                onBlur={() => setShowFilter(false)}
               />
               <Button variant="outline-success">Search</Button>
             </Form>
-            <ProductFilter />
+            {showFilter && <ProductFilter />}
           </div>
         </Navbar.Collapse>
       </Container>
