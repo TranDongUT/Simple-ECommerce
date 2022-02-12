@@ -12,7 +12,7 @@ import {
 import style from "./HeaderStyle.module.scss";
 import ProductFilter from "./ProductFilter";
 import { useContext } from "react";
-import { filterProducts } from "../store/actions";
+import { filterProducts, clearFilter } from "../store/actions";
 import { StoreContext } from "../store";
 
 function Header() {
@@ -60,6 +60,7 @@ function Header() {
                 className="me-2"
                 aria-label="Search"
                 onChange={(e) => handleFilter(e)}
+                onBlur={() => dispatch(clearFilter())}
               />
               <Button variant="outline-success">Search</Button>
             </Form>
