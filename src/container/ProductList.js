@@ -8,7 +8,6 @@ import Product from "./Product";
 
 function ProductList() {
   const [state, dispatch] = useContext(StoreContext);
-  //console.log(state);
   const fetchProducts = async () => {
     const respone = await axios.get(productsAPI);
     dispatch(callApi(respone.data));
@@ -17,8 +16,6 @@ function ProductList() {
   useEffect(() => {
     fetchProducts();
   }, []);
-
-  //console.log(allProducts);
 
   return (
     <Container>

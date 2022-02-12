@@ -11,15 +11,24 @@ import {
 
 import style from "./HeaderStyle.module.scss";
 import ProductFilter from "./ProductFilter";
+<<<<<<< HEAD
 import { useContext, useEffect, useState } from "react";
+=======
+import { useContext, useState } from "react";
+>>>>>>> 4214906dca6c4f933850d367956ed5e05655fb8b
 import { filterProducts } from "../store/actions";
 import { StoreContext } from "../store";
 
 function Header() {
+<<<<<<< HEAD
   const [state, dispatch] = useContext(StoreContext);
   const [showFilter, setShowFilter] = useState(false);
 
 
+=======
+  const [, dispatch] = useContext(StoreContext);
+  const [showFilter, setShowFilter] = useState(false);
+>>>>>>> 4214906dca6c4f933850d367956ed5e05655fb8b
 
   const handleFilter = (e) => {
     setShowFilter(true);
@@ -72,6 +81,7 @@ function Header() {
                 type="search"
                 placeholder="Search"
                 className="me-2"
+<<<<<<< HEAD
                 aria-label="Search"qweDSAS
                 onChange={(e) => handleFilter(e)}
                 onFocus={(e) => handleShowFiler(e)}
@@ -80,6 +90,16 @@ function Header() {
               <Button variant="outline-success">Search</Button>
             </Form>
             {showFilter ? <ProductFilter/> : ""}
+=======
+                aria-label="Search"
+                onFocus={() => setShowFilter(true)}
+                onChange={(e) => handleFilter(e)}
+                onBlur={() => setShowFilter(false)}
+              />
+              <Button variant="outline-success">Search</Button>
+            </Form>
+            {showFilter && <ProductFilter />}
+>>>>>>> 4214906dca6c4f933850d367956ed5e05655fb8b
           </div>
         </Navbar.Collapse>
       </Container>
