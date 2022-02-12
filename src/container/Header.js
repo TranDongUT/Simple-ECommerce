@@ -11,16 +11,30 @@ import {
 
 import style from "./HeaderStyle.module.scss";
 import ProductFilter from "./ProductFilter";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { filterProducts } from "../store/actions";
 import { StoreContext } from "../store";
 
 function Header() {
-  const [, dispatch] = useContext(StoreContext);
+  const [state, dispatch] = useContext(StoreContext);
+  const [showFilter, setShowFilter] = useState(false);
+
+
 
   const handleFilter = (e) => {
+    setShowFilter(true);
     dispatch(filterProducts(e.target.value.trim()));
   };
+
+  const handleShowFiler = (e)=>{
+      if(e.target.value.trim() === ''){
+          setShowFilter(false)
+      }
+      else{
+        handleFilter(e)
+      }
+    
+  }
 
   return (
     <Navbar bg="light" expand="lg">
@@ -53,17 +67,19 @@ function Header() {
             </NavDropdown>
           </Nav>
           <div className={style.headerInput}>
-            <Form className="d-flex">
+            <Form onFocus={()=> setShowFilter(true)} className="d-flex">
               <FormControl
                 type="search"
                 placeholder="Search"
                 className="me-2"
-                aria-label="Search"
+                aria-label="Search"qweDSAS
                 onChange={(e) => handleFilter(e)}
+                onFocus={(e) => handleShowFiler(e)}
+                onBlur={(e) => handleShowFiler(e)}
               />
               <Button variant="outline-success">Search</Button>
             </Form>
-            <ProductFilter />
+            {showFilter ? <ProductFilter/> : ""}
           </div>
         </Navbar.Collapse>
       </Container>
