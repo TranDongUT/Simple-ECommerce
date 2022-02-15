@@ -1,3 +1,12 @@
-.headerInput{
-   
+.header{
+    position: fixed;
+    z-index: 9999;
+    width: 100vw;
+    top: 0;
+}
+
+.filterList{
+    width:100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
 }

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { StoreContext } from "../store";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import style from "./ProductFilterStyle.module.scss";
 
 function ProductFilter() {
@@ -12,10 +12,9 @@ function ProductFilter() {
     <div className={style.listProduct}>
       <ul>
         {products.map((product) => (
-          <div
+          <Link to={`/product/${product.id}`}
             style={{ color: "inherit", textDecoration: "inherit" }}
             key={product.id}
-            onMouseDown={() => nav(`/product/${product.id}`)}
           >
             <li className={style.productItem} key={product.id}>
               <div className={style.productImg}>
@@ -23,7 +22,7 @@ function ProductFilter() {
               </div>
               <p className={style.productTitle}>{product.title}</p>
             </li>
-          </div>
+          </Link>
         ))}
       </ul>
     </div>

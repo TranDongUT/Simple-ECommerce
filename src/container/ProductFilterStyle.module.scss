@@ -1,11 +1,11 @@
 .listProduct{
     position: absolute;
-    z-index: 9999;
-    margin-top: 10px;
-    width: 350px;
+    width: 30%;
     max-height: 500px;
     background-color: #f8f9fa;
     overflow-y: scroll;
+    right: 0;
+    animation: 0.5s linear RightToLeft;
     ul{
         padding: 0;
         list-style-type: none;
@@ -37,5 +37,20 @@
         text-align: left;
         white-space: nowrap;
     }
-    
 }
+
+@keyframes RightToLeft{
+    from{
+        right: -40%;
+    }
+    to{
+        right: 0;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .listProduct{
+        width: 100%;
+    }
+  }
