@@ -20,7 +20,7 @@ function Header() {
   const [showFilter, setShowFilter] = useState(false);
 
   const handleFilter = (e) => {
-    if (e.target.value.trim() == "") {
+    if(e.target.value.trim() == ""){
       setShowFilter(false);
     } else {
       setShowFilter(true);
