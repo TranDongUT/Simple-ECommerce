@@ -20,7 +20,11 @@ function Header() {
   const [showFilter, setShowFilter] = useState(false);
 
   const handleFilter = (e) => {
+<<<<<<< HEAD
     if(e.target.value.trim() == ""){
+=======
+    if(e.target.value.trim() == "") {
+>>>>>>> 31ef34bbe3704f4840ca0913e1b464e9915fcbc9
       setShowFilter(false);
     } else {
       setShowFilter(true);
