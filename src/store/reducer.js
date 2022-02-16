@@ -9,6 +9,7 @@ export const initState = {
   products: [],
   selectedProduct: "",
   productFilter: [],
+  inCategory: [],
 };
 
 export function reducer(state, action) {

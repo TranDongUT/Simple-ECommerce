@@ -11,7 +11,7 @@ import {
 
 import style from "./HeaderStyle.module.scss";
 import ProductFilter from "./ProductFilter";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { filterProducts } from "../store/actions";
 import { StoreContext } from "../store";
 
@@ -20,11 +20,7 @@ function Header() {
   const [showFilter, setShowFilter] = useState(false);
 
   const handleFilter = (e) => {
-<<<<<<< HEAD
-    if(e.target.value.trim() == ""){
-=======
-    if(e.target.value.trim() == "") {
->>>>>>> 31ef34bbe3704f4840ca0913e1b464e9915fcbc9
+    if (e.target.value.trim() === "") {
       setShowFilter(false);
     } else {
       setShowFilter(true);
@@ -51,18 +47,21 @@ function Header() {
               <Nav.Link href="https://www.facebook.com/profile.php?id=100004428967428">
                 Link
               </Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
+              <NavDropdown title="Categories" id="basic-nav-dropdown">
+                <NavDropdown.Item>
+                  <Link to={"/product/category/electronics"}>Electronics</Link>
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
+                <NavDropdown.Item>
+                  <Link to={"/product/category/jewelery"}>Jewelery</Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Link to={"/product/category/men's clothing"}>Men's clothing</Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Link to={"/product/category/women's clothing"}>Women's clothing</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
+                <NavDropdown.Item>Separated link</NavDropdown.Item>
               </NavDropdown>
             </Nav>
             <div className={style.headerInput}>

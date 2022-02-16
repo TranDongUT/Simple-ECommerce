@@ -8,6 +8,7 @@ import style from "./ProductDetailStyle.module.scss";
 import { selectedProduct, clearFilter } from "../store/actions";
 
 function ProductDetail() {
+  
   const { productId } = useParams();
 
   const [state, dispatch] = useContext(StoreContext);

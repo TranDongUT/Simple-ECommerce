@@ -2,3 +2,8 @@
   text-align: center;
   box-sizing: border-box;
 }
+
+Link{
+  color: "inherit";
+  text-decoration: "inherit";
+}

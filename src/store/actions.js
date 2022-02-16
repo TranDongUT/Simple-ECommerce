@@ -1,4 +1,4 @@
-import { CALL_API, SELECTED_PRODUCT, FILTER_PRODUCTS } from "./constants";
+import { CALL_API, SELECTED_PRODUCT, FILTER_PRODUCTS} from "./constants";
 
 export const callApi = (payload) => ({
   type: CALL_API,
