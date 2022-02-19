@@ -4,9 +4,9 @@ import axios from "axios";
 import Product from "./Product";
 import productsAPI from "../API";
 import { StoreContext } from "../store";
-import { callApi } from "../store/actions";
-import { Nav, Row } from "react-bootstrap";
-import style from "./CategoryStyle.module.scss";
+import { callApi, inCategory } from "../store/actions";
+import { Nav, Row, Button, Spinner } from "react-bootstrap";
+import style from "./style/CategoryStyle.module.scss";
 
 function Category() {
   const { type } = useParams();
@@ -14,7 +14,8 @@ function Category() {
 
   const fetchCategory = async () => {
     const respone = await axios.get(`${productsAPI}/category/${type}`);
-    dispatch(callApi(respone.data));
+    dispatch(inCategory(respone.data));
+
   };
 
   useEffect(() => {
@@ -39,19 +40,45 @@ function Category() {
           </Nav.Item>
           <Nav.Item>
             <Nav.Link>
-              <Link to={"/product/category/men's clothing"}>Men's clothing</Link>
+              <Link to={"/product/category/men's clothing"}>
+                Men's clothing
+              </Link>
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link>
-              <Link to={"/product/category/women's clothing"}>Women's clothing</Link>
+              <Link to={"/product/category/women's clothing"}>
+                Women's clothing
+              </Link>
             </Nav.Link>
           </Nav.Item>
         </Nav>
 
-        <Row style={{marginTop: '90px'}}>
-          <Product />
-        </Row>
+        {Object.keys(state.inCategory).length === 0 ? (
+          <Button
+            style={{
+              position: "fixed",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%,-50%)",
+            }}
+            variant="primary"
+            disabled
+          >
+            <Spinner
+              as="span"
+              animation="grow"
+              size="sm"
+              role="status"
+              aria-hidden="true"
+            />
+            Loading...
+          </Button>
+        ) : (
+          <Row style={{ marginTop: "90px" }}>
+            <Product category={state.inCategory}/>
+          </Row>
+        )}
       </Row>
     </>
   );

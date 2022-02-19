@@ -1,12 +1,11 @@
 import { useContext } from "react";
 import { StoreContext } from "../store";
-import { useNavigate, Link } from "react-router-dom";
-import style from "./ProductFilterStyle.module.scss";
+import { Link } from "react-router-dom";
+import style from "./style/ProductFilterStyle.module.scss";
 
 function ProductFilter() {
-  const [state] = useContext(StoreContext);
+  const [state,dispatch] = useContext(StoreContext);
   const products = state.productFilter;
-  let nav = useNavigate();
 
   return (
     <div className={style.listProduct}>

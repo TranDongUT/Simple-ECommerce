@@ -4,7 +4,7 @@ import { StoreContext } from "../store";
 import axios from "axios";
 import productAPI from "../API";
 import { Col, Row, Button, Spinner } from "react-bootstrap";
-import style from "./ProductDetailStyle.module.scss";
+import style from "./style/ProductDetailStyle.module.scss";
 import { selectedProduct, clearFilter } from "../store/actions";
 
 function ProductDetail() {

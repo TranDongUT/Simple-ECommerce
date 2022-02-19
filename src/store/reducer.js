@@ -2,6 +2,7 @@ import {
   CALL_API,
   CLEAR_FILTER,
   FILTER_PRODUCTS,
+  IN_CATEGORY,
   SELECTED_PRODUCT,
 } from "./constants";
 
@@ -34,6 +35,11 @@ export function reducer(state, action) {
       return {
         ...state,
         productFilter: [...fill],
+      };
+    case IN_CATEGORY:
+      return{
+        ...state,
+        inCategory: action.payload
       };
     default:
       throw new Error("invalid action");

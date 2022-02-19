@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { Col, Card, Button } from "react-bootstrap";
-import style from "./ProductStyle.module.scss";
+import style from "./style/ProductStyle.module.scss";
 import { useContext } from "react";
 import { StoreContext } from "../store";
 
-function Product() {
+function Product({category}) {
   const [state] = useContext(StoreContext);
-  const { products } = state;
+  const  products  = category ? category : state.products;
 
   return products.map((product) => (
     <Col key={product.id} className={style.productCol} sm>

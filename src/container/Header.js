@@ -9,7 +9,7 @@ import {
   Button,
 } from "react-bootstrap";
 
-import style from "./HeaderStyle.module.scss";
+import style from "./style/HeaderStyle.module.scss";
 import ProductFilter from "./ProductFilter";
 import { useContext, useState } from "react";
 import { filterProducts } from "../store/actions";
