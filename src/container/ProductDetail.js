@@ -8,7 +8,6 @@ import style from "./style/ProductDetailStyle.module.scss";
 import { selectedProduct, clearFilter } from "../store/actions";
 
 function ProductDetail() {
-  
   const { productId } = useParams();
 
   const [state, dispatch] = useContext(StoreContext);
@@ -30,7 +29,7 @@ function ProductDetail() {
 
   return (
     <>
-      <h2 style={{ marginTop: "20px" }}>Product Detail</h2>
+      <h2 style={{ marginTop: "100px" }}>Product Detail</h2>
       {Object.keys(state.selectedProduct).length === 0 ? (
         <Button
           style={{

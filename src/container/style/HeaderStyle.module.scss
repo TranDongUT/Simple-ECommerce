@@ -10,3 +10,12 @@
     height: 100vh;
     background-color: rgba(0,0,0,0.5);
 }
+
+.cartIcon{
+    font-size: 24px;
+    cursor: pointer;
+    span{
+        font-size: 16px;
+        margin-left: 4px;
+    }
+}

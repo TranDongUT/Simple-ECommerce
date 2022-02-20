@@ -1,4 +1,10 @@
-import { CALL_API, SELECTED_PRODUCT, FILTER_PRODUCTS, IN_CATEGORY} from "./constants";
+import {
+  CALL_API,
+  SELECTED_PRODUCT,
+  FILTER_PRODUCTS,
+  IN_CATEGORY,
+  ADD_TO_CART,
+} from "./constants";
 
 export const callApi = (payload) => ({
   type: CALL_API,
@@ -7,7 +13,7 @@ export const callApi = (payload) => ({
 
 export const selectedProduct = (payload) => ({
   type: SELECTED_PRODUCT,
-  payload
+  payload,
 });
 
 export const filterProducts = (payload) => ({
@@ -15,7 +21,12 @@ export const filterProducts = (payload) => ({
   payload: payload.toString().toLowerCase(),
 });
 
-export const inCategory = (payload) =>({
+export const inCategory = (payload) => ({
   type: IN_CATEGORY,
-  payload
-})
+  payload,
+});
+
+export const addToCart = (payload) => ({
+  type: ADD_TO_CART,
+  payload,
+});

@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 
-Link{
+.reset-link {
   color: "inherit";
   text-decoration: "inherit";
 }

@@ -3,10 +3,21 @@ import { Col, Card, Button } from "react-bootstrap";
 import style from "./style/ProductStyle.module.scss";
 import { useContext } from "react";
 import { StoreContext } from "../store";
+import { addToCart } from "../store/actions";
 
-function Product({category}) {
-  const [state] = useContext(StoreContext);
-  const  products  = category ? category : state.products;
+function Product({ category }) {
+  const [state, dispatch] = useContext(StoreContext);
+  const products = category ? category : state.products;
+
+  const handleAddtoCart = (e, product) => {
+    e.preventDefault();
+    dispatch(
+      addToCart({
+        ...product,
+        quantity: 1,
+      })
+    );
+  };
 
   return products.map((product) => (
     <Col key={product.id} className={style.productCol} sm>
@@ -24,7 +35,10 @@ function Product({category}) {
                 <p className={style.productTitle}>{product.title}</p>
               </Card.Title>
               <Card.Text>${product.price}</Card.Text>
-              <Button onClick={(e) => e.preventDefault()} variant="primary">
+              <Button
+                onClick={(e) => handleAddtoCart(e, product)}
+                variant="primary"
+              >
                 Add To Cart
               </Button>
             </Card.Body>

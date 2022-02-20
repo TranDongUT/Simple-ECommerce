@@ -15,7 +15,6 @@ function Category() {
   const fetchCategory = async () => {
     const respone = await axios.get(`${productsAPI}/category/${type}`);
     dispatch(inCategory(respone.data));
-
   };
 
   useEffect(() => {
@@ -25,36 +24,8 @@ function Category() {
 
   return (
     <>
-      <h2>Category</h2>
-      <Row className={style.category}>
-        <Nav justify variant="tabs" defaultActiveKey="/home">
-          <Nav.Item>
-            <Nav.Link>
-              <Link to={"/product/category/electronics"}>Electronics</Link>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link>
-              <Link to={"/product/category/jewelery"}>Jewelery</Link>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link>
-              <Link to={"/product/category/men's clothing"}>
-                Men's clothing
-              </Link>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link>
-              <Link to={"/product/category/women's clothing"}>
-                Women's clothing
-              </Link>
-            </Nav.Link>
-          </Nav.Item>
-        </Nav>
-
-        {Object.keys(state.inCategory).length === 0 ? (
+      <h2 className={style.category}>Category</h2>
+      {Object.keys(state.inCategory).length === 0 ? (
           <Button
             style={{
               position: "fixed",
@@ -74,12 +45,54 @@ function Category() {
             />
             Loading...
           </Button>
-        ) : (
+        ): 
+      <Row>
+        <Nav justify variant="tabs" defaultActiveKey="/home">
+          <Nav.Item>
+            <Link
+              style={{ color: "inherit", textDecoration: "inherit" }}
+              className="nav-link"
+              to={"/product/category/electronics"}
+            >
+              Electronics
+            </Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Link
+              style={{ color: "inherit", textDecoration: "inherit" }}
+              className="nav-link"
+              to={"/product/category/jewelery"}
+            >
+              Jewelery
+            </Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Link
+              style={{ color: "inherit", textDecoration: "inherit" }}
+              className="nav-link"
+              to={"/product/category/men's clothing"}
+            >
+              Men's clothing
+            </Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Link
+              style={{ color: "inherit", textDecoration: "inherit" }}
+              className="nav-link"
+              to={"/product/category/women's clothing"}
+            >
+              Women's clothing
+            </Link>
+          </Nav.Item>
+        </Nav>
+
+        {
           <Row style={{ marginTop: "90px" }}>
-            <Product category={state.inCategory}/>
+            <Product category={state.inCategory} />
           </Row>
-        )}
+        }
       </Row>
+      }
     </>
   );
 }

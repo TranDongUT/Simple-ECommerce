@@ -28,6 +28,14 @@ function Header() {
     }
   };
 
+  const quantityOfCart = () => {
+    let quantity = 0;
+    state.productInCart.forEach((product) => {
+      quantity += product.quantity;
+    });
+    return quantity;
+  };
+
   return (
     <div className={style.header}>
       <Navbar bg="light" expand="lg">
@@ -39,43 +47,54 @@ function Header() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Link
+                className="nav-link"
                 to={"/"}
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
-                <Nav.Link href="#product">Products</Nav.Link>
+                Product
               </Link>
               <Nav.Link href="https://www.facebook.com/profile.php?id=100004428967428">
                 Link
               </Nav.Link>
               <NavDropdown title="Categories" id="basic-nav-dropdown">
-                <NavDropdown.Item>
-                  <Link to={"/product/category/electronics"}>Electronics</Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                  <Link to={"/product/category/jewelery"}>Jewelery</Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                  <Link to={"/product/category/men's clothing"}>Men's clothing</Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                  <Link to={"/product/category/women's clothing"}>Women's clothing</Link>
-                </NavDropdown.Item>
+                  <Link className="dropdown-item" to={"/product/category/electronics"}>Electronics</Link>
+                  <Link className="dropdown-item" to={"/product/category/jewelery"}>Jewelery</Link>
+                  <Link className="dropdown-item" to={"/product/category/men's clothing"}>
+                    Men's clothing
+                  </Link>
+                  <Link className="dropdown-item" to={"/product/category/women's clothing"}>
+                    Women's clothing
+                  </Link>
                 <NavDropdown.Divider />
                 <NavDropdown.Item>Separated link</NavDropdown.Item>
               </NavDropdown>
             </Nav>
             <div className={style.headerInput}>
-              <Form onFocus={() => setShowFilter(true)} className="d-flex">
+              <Form className="d-flex">
                 <FormControl
                   type="search"
                   placeholder="Search"
                   className="me-2"
                   aria-label="Search"
-                  qweDSAS
                   onChange={(e) => handleFilter(e)}
                   onFocus={() => setShowFilter(true)}
                 />
-                <Button variant="outline-success">Search</Button>
+                {/* <Button variant="outline-success">Search</Button> */}
+                <Link
+                  to={"/cart"}
+                  style={{ color: "inherit", textDecoration: "inherit" }}
+                >
+                  <div
+                    onClick={(e) => e.stopPropagation()}
+                    className={style.cartIcon}
+                  >
+                    <i className="bx bx-cart-alt">
+                      {quantityOfCart() > 0 && (
+                        <span>({quantityOfCart()})</span>
+                      )}
+                    </i>
+                  </div>
+                </Link>
               </Form>
             </div>
           </Navbar.Collapse>

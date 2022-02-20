@@ -40,9 +40,12 @@ function ProductList() {
           Loading...
         </Button>
       ) : (
-        <Row style={{marginTop: '90px'}}>
+        <>
+        <h1 style={{marginTop:'100px'}}>Products</h1>
+        <Row>
           <Product />
         </Row>
+        </>
       )}
     </Container>
   );

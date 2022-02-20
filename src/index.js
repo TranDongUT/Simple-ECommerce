@@ -7,12 +7,12 @@ import { BrowserRouter } from "react-router-dom";
 import { StoreProvider } from "./store";
 
 ReactDOM.render(
-  <React.StrictMode>
+  //<React.StrictMode>
     <StoreProvider>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </StoreProvider>
-  </React.StrictMode>,
+    </StoreProvider>,
+   //</React.StrictMode>,?????? bug in development enviroment not in production
   document.getElementById("root")
 );
