@@ -1,0 +1,38 @@
+.tableCart {
+  width: 70%;
+  position: relative;
+  margin: auto auto;
+
+  .tableBody {
+  }
+
+  .tableRow {
+    height: 90px;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    .img {
+      min-width: 60px;
+      max-width: 60px;
+      float: left;
+      margin-right: 20px;
+    }
+  }
+  .quantity {
+    text-align: center;
+    width: 60px;
+  }
+  .trashIcon {
+    font-size: 24px;
+    :hover {
+      cursor: pointer;
+      color: #d35e5e;
+    }
+  }
+  .totalPrice {
+    font-size: 30px;
+    font-weight: 600;
+  }
+}

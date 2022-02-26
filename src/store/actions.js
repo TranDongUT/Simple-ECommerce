@@ -4,6 +4,7 @@ import {
   FILTER_PRODUCTS,
   IN_CATEGORY,
   ADD_TO_CART,
+  UPDATE_CART,
 } from "./constants";
 
 export const callApi = (payload) => ({
@@ -28,5 +29,10 @@ export const inCategory = (payload) => ({
 
 export const addToCart = (payload) => ({
   type: ADD_TO_CART,
+  payload,
+});
+
+export const updateCart = (payload) => ({
+  type: UPDATE_CART,
   payload,
 });

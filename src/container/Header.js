@@ -31,7 +31,7 @@ function Header() {
   const quantityOfCart = () => {
     let quantity = 0;
     state.productInCart.forEach((product) => {
-      quantity += product.quantity;
+      quantity += Number(product.quantity);
     });
     return quantity;
   };
@@ -57,14 +57,30 @@ function Header() {
                 Link
               </Nav.Link>
               <NavDropdown title="Categories" id="basic-nav-dropdown">
-                  <Link className="dropdown-item" to={"/product/category/electronics"}>Electronics</Link>
-                  <Link className="dropdown-item" to={"/product/category/jewelery"}>Jewelery</Link>
-                  <Link className="dropdown-item" to={"/product/category/men's clothing"}>
-                    Men's clothing
-                  </Link>
-                  <Link className="dropdown-item" to={"/product/category/women's clothing"}>
-                    Women's clothing
-                  </Link>
+                <Link
+                  className="dropdown-item"
+                  to={"/product/category/electronics"}
+                >
+                  Electronics
+                </Link>
+                <Link
+                  className="dropdown-item"
+                  to={"/product/category/jewelery"}
+                >
+                  Jewelery
+                </Link>
+                <Link
+                  className="dropdown-item"
+                  to={"/product/category/men's clothing"}
+                >
+                  Men's clothing
+                </Link>
+                <Link
+                  className="dropdown-item"
+                  to={"/product/category/women's clothing"}
+                >
+                  Women's clothing
+                </Link>
                 <NavDropdown.Divider />
                 <NavDropdown.Item>Separated link</NavDropdown.Item>
               </NavDropdown>

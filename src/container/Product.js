@@ -10,6 +10,7 @@ function Product({ category }) {
   const products = category ? category : state.products;
 
   const handleAddtoCart = (e, product) => {
+    alert("Added");
     e.preventDefault();
     dispatch(
       addToCart({

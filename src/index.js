@@ -8,11 +8,11 @@ import { StoreProvider } from "./store";
 
 ReactDOM.render(
   //<React.StrictMode>
-    <StoreProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </StoreProvider>,
-   //</React.StrictMode>,?????? bug in development enviroment not in production
+  <StoreProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </StoreProvider>,
+  //</React.StrictMode>,
   document.getElementById("root")
 );

@@ -1,11 +1,12 @@
 import { useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { StoreContext } from "../store";
+import { addToCart } from "../store/actions";
 import axios from "axios";
 import productAPI from "../API";
 import { Col, Row, Button, Spinner } from "react-bootstrap";
 import style from "./style/ProductDetailStyle.module.scss";
-import { selectedProduct, clearFilter } from "../store/actions";
+import { selectedProduct } from "../store/actions";
 
 function ProductDetail() {
   const { productId } = useParams();
@@ -26,6 +27,17 @@ function ProductDetail() {
       dispatch(selectedProduct(""));
     };
   }, [productId]);
+
+  const handleAddtoCart = (e, product) => {
+    alert("Added");
+    e.preventDefault();
+    dispatch(
+      addToCart({
+        ...product,
+        quantity: 1,
+      })
+    );
+  };
 
   return (
     <>
@@ -72,7 +84,7 @@ function ProductDetail() {
                 <h1>${price}</h1>
                 <Button
                   style={{ width: "100%" }}
-                  onClick={(e) => e.preventDefault()}
+                  onClick={(e) => handleAddtoCart(e, state.selectedProduct)}
                   variant="primary"
                 >
                   Add To Cart

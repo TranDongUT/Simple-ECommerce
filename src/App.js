@@ -11,10 +11,10 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<ProductList/>} />
-        <Route path="/product/:productId" element={<ProductDetail/>}/>
-        <Route path="/product/category/:type" element={<Category/>}/>
-        <Route path='/cart' element={<Cart/>}/>
+        <Route path="/" element={<ProductList />} />
+        <Route path="/product/:productId" element={<ProductDetail />} />
+        <Route path="/product/category/:type" element={<Category />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </div>
   );
