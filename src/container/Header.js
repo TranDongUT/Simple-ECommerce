@@ -101,7 +101,6 @@ function Header() {
                   style={{ color: "inherit", textDecoration: "inherit" }}
                 >
                   <div
-                    onClick={(e) => e.stopPropagation()}
                     className={style.cartIcon}
                   >
                     <i className="bx bx-cart-alt">
