@@ -60,7 +60,7 @@ export function reducer(state, action) {
       );
 
       if (updateCart != -1) {
-        inCart[updateCart].quantity += 1;
+        inCart[updateCart].quantity = Number(inCart[updateCart].quantity) + 1;
       } else {
         inCart = [...inCart, product];
       }
@@ -84,7 +84,7 @@ export function reducer(state, action) {
         inCart[updateCart].quantity = product.quantity;
       }
       let newInCart = [];
-      if (product.quantity == 0) {
+      if (product.quantity == -1) {
         inCart.splice(updateCart, 1);
       }
 

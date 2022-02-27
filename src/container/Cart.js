@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { StoreContext } from "../store";
 import { updateCart } from "../store/actions";
 import { Table } from "react-bootstrap";
@@ -22,7 +22,7 @@ function Cart() {
     dispatch(
       updateCart({
         ...product,
-        quantity: 0,
+        quantity: -1,
       })
     );
   };
@@ -34,6 +34,8 @@ function Cart() {
     });
     return total.toFixed(2);
   };
+
+  const refQuantity = useRef();
 
   return (
     <>
@@ -63,6 +65,7 @@ function Cart() {
                   <td>
                     <input
                       className={style.quantity}
+                      ref={refQuantity}
                       type="number"
                       min={1}
                       value={product.quantity}

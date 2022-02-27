@@ -1,10 +1,8 @@
 .tableCart {
-  width: 70%;
+  width: 80%;
+  overflow: scroll;
   position: relative;
   margin: auto auto;
-
-  .tableBody {
-  }
 
   .tableRow {
     height: 90px;
@@ -20,9 +18,10 @@
       margin-right: 20px;
     }
   }
+
   .quantity {
     text-align: center;
-    width: 60px;
+    width: 50px;
   }
   .trashIcon {
     font-size: 24px;

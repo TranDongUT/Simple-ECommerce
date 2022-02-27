@@ -5,6 +5,7 @@ import ProductList from "./container/ProductList";
 import ProductDetail from "./container/ProductDetail";
 import Category from "./container/Category";
 import Cart from "./container/Cart";
+import { Carousel } from "react-bootstrap";
 
 function App() {
   return (
