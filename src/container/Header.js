@@ -48,7 +48,7 @@ function Header() {
             <Nav className="me-auto">
               <Link
                 className="nav-link"
-                to={"/"}
+                to={"/products"}
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 Product
@@ -100,9 +100,7 @@ function Header() {
                   to={"/cart"}
                   style={{ color: "inherit", textDecoration: "inherit" }}
                 >
-                  <div
-                    className={style.cartIcon}
-                  >
+                  <div className={style.cartIcon}>
                     <i className="bx bx-cart-alt">
                       {quantityOfCart() > 0 && (
                         <span>({quantityOfCart()})</span>

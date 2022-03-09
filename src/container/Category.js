@@ -19,80 +19,82 @@ function Category() {
 
   useEffect(() => {
     fetchCategory();
-    return () => {};
+    return () => {
+      dispatch(inCategory(""));
+    };
   }, [type]);
 
   return (
     <>
       <h2 className={style.category}>Category</h2>
       {Object.keys(state.inCategory).length === 0 ? (
-          <Button
-            style={{
-              position: "fixed",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%,-50%)",
-            }}
-            variant="primary"
-            disabled
-          >
-            <Spinner
-              as="span"
-              animation="grow"
-              size="sm"
-              role="status"
-              aria-hidden="true"
-            />
-            Loading...
-          </Button>
-        ): 
-      <Row>
-        <Nav justify variant="tabs" defaultActiveKey="/home">
-          <Nav.Item>
-            <Link
-              style={{ color: "inherit", textDecoration: "inherit" }}
-              className="nav-link"
-              to={"/product/category/electronics"}
-            >
-              Electronics
-            </Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Link
-              style={{ color: "inherit", textDecoration: "inherit" }}
-              className="nav-link"
-              to={"/product/category/jewelery"}
-            >
-              Jewelery
-            </Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Link
-              style={{ color: "inherit", textDecoration: "inherit" }}
-              className="nav-link"
-              to={"/product/category/men's clothing"}
-            >
-              Men's clothing
-            </Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Link
-              style={{ color: "inherit", textDecoration: "inherit" }}
-              className="nav-link"
-              to={"/product/category/women's clothing"}
-            >
-              Women's clothing
-            </Link>
-          </Nav.Item>
-        </Nav>
+        <Button
+          style={{
+            position: "fixed",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%,-50%)",
+          }}
+          variant="primary"
+          disabled
+        >
+          <Spinner
+            as="span"
+            animation="grow"
+            size="sm"
+            role="status"
+            aria-hidden="true"
+          />
+          Loading...
+        </Button>
+      ) : (
+        <Row>
+          <Nav justify variant="tabs" defaultActiveKey="/home">
+            <Nav.Item>
+              <Link
+                style={{ color: "inherit", textDecoration: "inherit" }}
+                className="nav-link"
+                to={"/product/category/electronics"}
+              >
+                Electronics
+              </Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Link
+                style={{ color: "inherit", textDecoration: "inherit" }}
+                className="nav-link"
+                to={"/product/category/jewelery"}
+              >
+                Jewelery
+              </Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Link
+                style={{ color: "inherit", textDecoration: "inherit" }}
+                className="nav-link"
+                to={"/product/category/men's clothing"}
+              >
+                Men's clothing
+              </Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Link
+                style={{ color: "inherit", textDecoration: "inherit" }}
+                className="nav-link"
+                to={"/product/category/women's clothing"}
+              >
+                Women's clothing
+              </Link>
+            </Nav.Item>
+          </Nav>
 
-        {
-          <Row style={{ marginTop: "90px" }}>
-            <Product category={state.inCategory} />
-          </Row>
-        }
-      </Row>
-      }
+          {
+            <Row style={{ marginTop: "90px" }}>
+              <Product category={state.inCategory} />
+            </Row>
+          }
+        </Row>
+      )}
     </>
   );
 }
