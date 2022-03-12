@@ -66,7 +66,7 @@ export function reducer(state, action) {
       }
 
       localStorage.setItem("productInCart", JSON.stringify(inCart));
-
+      const teset = "";
       return {
         ...state,
         ///conver to array

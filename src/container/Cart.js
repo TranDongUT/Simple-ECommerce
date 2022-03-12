@@ -3,6 +3,7 @@ import { StoreContext } from "../store";
 import { updateCart } from "../store/actions";
 import { Table } from "react-bootstrap";
 import style from "./style/CartStyle.module.scss";
+import Payment from "./Payment";
 
 function Cart() {
   const [state, dispatch] = useContext(StoreContext);
@@ -94,6 +95,7 @@ function Cart() {
             </tr>
           </tfoot>
         </Table>
+        <Payment />
       </div>
     </>
   );

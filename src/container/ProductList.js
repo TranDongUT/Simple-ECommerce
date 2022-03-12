@@ -41,10 +41,10 @@ function ProductList() {
         </Button>
       ) : (
         <>
-        <h1 style={{marginTop:'100px'}}>Products</h1>
-        <Row>
-          <Product />
-        </Row>
+          <h1 style={{ marginTop: "100px" }}>Products</h1>
+          <Row>
+            <Product />
+          </Row>
         </>
       )}
     </Container>

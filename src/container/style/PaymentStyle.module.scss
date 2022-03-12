@@ -1,0 +1,49 @@
+.payment {
+  padding: 0 5px;
+
+  input {
+    font-size: 18px;
+    width: 300px;
+    margin: 0 5px;
+  }
+
+  .inforPayment {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+
+  .orderBtn {
+    float: left;
+  }
+
+  .listAddress {
+    max-height: 200px;
+    padding: 0 5px;
+    overflow-y: scroll;
+    li {
+      list-style-type: none;
+      text-align: left;
+      &:hover {
+        background-color: #dadada;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .none {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .payment {
+    .inforPayment {
+      flex-direction: column;
+    }
+    input {
+      width: 100%;
+      margin-bottom: 4px;
+    }
+  }
+}
