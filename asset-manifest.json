@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Simple-ECommerce/static/css/main.02c4b5b5.css",
-    "main.js": "/Simple-ECommerce/static/js/main.d4423695.js",
+    "main.js": "/Simple-ECommerce/static/js/main.f5761965.js",
     "index.html": "/Simple-ECommerce/index.html",
     "main.02c4b5b5.css.map": "/Simple-ECommerce/static/css/main.02c4b5b5.css.map",
-    "main.d4423695.js.map": "/Simple-ECommerce/static/js/main.d4423695.js.map"
+    "main.f5761965.js.map": "/Simple-ECommerce/static/js/main.f5761965.js.map"
   },
   "entrypoints": [
     "static/css/main.02c4b5b5.css",
-    "static/js/main.d4423695.js"
+    "static/js/main.f5761965.js"
   ]
 }
