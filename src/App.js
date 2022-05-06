@@ -11,6 +11,8 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
+        <Route path="/Simple-ECommerce/" element={<ProductList />} />
+        <Route path="/" element={<ProductList />} />
         <Route path="/products" element={<ProductList />} />
         <Route path="/product/:productId" element={<ProductDetail />} />
         <Route path="/product/category/:type" element={<Category />} />
